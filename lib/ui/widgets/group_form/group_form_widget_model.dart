@@ -10,7 +10,7 @@ class GroupFormWidgetModel {
     final box = await BoxManager.instance.openGroupBox();
     final group = Group(name: groupName);
     await box.add(group);
-    // await BoxManager.instance.closeBox(box);
+    await BoxManager.instance.closeBox(box);
     Navigator.of(context).pop();
   }
 }
