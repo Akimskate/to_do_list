@@ -29,18 +29,17 @@ class _TasksWidgetState extends State<TasksWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final model = _model;
     return TasksWidgetModelProvider(
       model: _model,
       child: const TasksWidgetBody(),
     );
   }
 
-  // @override
-  // void dispose() async {
-  //   await _model.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    _model.dispose();
+    super.dispose();
+  }
 }
 
 class TasksWidgetBody extends StatelessWidget {

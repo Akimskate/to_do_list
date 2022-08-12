@@ -49,12 +49,12 @@ class TasksWidgetModel extends ChangeNotifier {
     _listenableBox?.addListener(_readTaskssFromHive);
   }
 
-  // @override
-  // Future<void> dispose() async {
-  //   _listenableBox?.removeListener(_readTaskssFromHive);
-  //   await BoxManager.instance.closeBox(await _box);
-  //   super.dispose(); 
-  // }
+  @override
+  void dispose() async {
+    _listenableBox?.removeListener(_readTaskssFromHive);
+    await BoxManager.instance.closeBox(await _box);
+    super.dispose(); 
+  }
 }
 
 class TasksWidgetModelProvider extends InheritedNotifier {

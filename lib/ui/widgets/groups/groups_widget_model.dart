@@ -55,12 +55,12 @@ class GroupsWidgetModel extends ChangeNotifier {
     _listenableBox?.addListener(_readGroupsFromHive);
   }
 
-  // @override
-  // Future<void>  dispose() async {
-  //   _listenableBox?.removeListener(_readGroupsFromHive);
-  //   await BoxManager.instance.closeBox((await _box));
-  //   super.dispose();
-  // }
+  @override
+  Future<void>  dispose() async {
+    _listenableBox?.removeListener(_readGroupsFromHive);
+    await BoxManager.instance.closeBox((await _box));
+    super.dispose();
+  }
 }
 
 class GroupWidgetModelProvider extends InheritedNotifier {

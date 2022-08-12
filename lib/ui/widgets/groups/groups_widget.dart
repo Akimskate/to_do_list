@@ -22,11 +22,11 @@ class _GroupsWidgetState extends State<GroupsWidget> {
     );
   }
 
-  // @override
-  // void dispose() async {
-  //   await _model.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() async {
+    await _model.dispose();
+    super.dispose();
+  }
 }
 
 class _GroupWidgetBody extends StatelessWidget {
