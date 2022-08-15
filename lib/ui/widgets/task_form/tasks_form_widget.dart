@@ -32,24 +32,25 @@ class _TextFormWidgetBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final model = TaskFormWidgetMOdelProvider.watch(context)?.model;
+    final actionButton = FloatingActionButton(
+      onPressed: () => model?.saveTask(context),
+      child: const Icon(Icons.done),
+    );
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('New task'),
-        ),
-        body: Center(
-          child: Container(
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 18.0),
-              child: _TaskTextWidget(),
-            ),
+      appBar: AppBar(
+        title: const Text('New task'),
+      ),
+      body: Center(
+        child: Container(
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 18.0),
+            child: _TaskTextWidget(),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => TaskFormWidgetMOdelProvider.read(context)
-              ?.model
-              .saveTask(context),
-          child: const Icon(Icons.done),
-        ));
+      ),
+      floatingActionButton: model?.isValid == true ? actionButton : null,
+    );
   }
 }
 
