@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:todo_list_app/ui/widgets/groups/groups_widget_model.dart';
+import 'package:todo_list_app/ui/widgets/theme/change_theme_button_widget.dart';
 
 class GroupsWidget extends StatefulWidget {
   const GroupsWidget({Key? key}) : super(key: key);
@@ -38,6 +39,9 @@ class _GroupWidgetBody extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Groups'),
+        actions: const [
+          ChangeThemeButtonWidget(),
+        ],
       ),
       body: SafeArea(
         child: _GroupListWidget(),

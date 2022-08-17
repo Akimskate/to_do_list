@@ -13,11 +13,9 @@ abstract class MainNavigationRouteNames {
 
 class MainNAvigation {
   final initialRoute = MainNavigationRouteNames.groups;
-  final routes = /*<String, Widget Function(BuildContext)>*/ {
+  final routes = <String, Widget Function(BuildContext)> {
     MainNavigationRouteNames.groups: (context) => const GroupsWidget(),
     MainNavigationRouteNames.groupsForm: (context) => const GroupFormWidget(),
-    // MainNavigationRouteNames.tasks: (context) => const TasksWidget(),
-    // MainNavigationRouteNames.tasksForm: (context) => TaskFormWidget(),
   };
 
   Route<Object> onGenerateRoute(RouteSettings settings) {
