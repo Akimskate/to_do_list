@@ -36,6 +36,7 @@ class GroupFormWidgetModelProvider extends InheritedNotifier {
       {Key? key, required this.child, required this.model})
       : super(key: key, notifier: model, child: child);
 
+  @override
   final Widget child;
 
   static GroupFormWidgetModelProvider? watch(BuildContext context) {

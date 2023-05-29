@@ -41,12 +41,10 @@ class _TextFormWidgetBody extends StatelessWidget {
       appBar: AppBar(
         title: const Text('New task'),
       ),
-      body: Center(
-        child: Container(
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.0),
-            child: _TaskTextWidget(),
-          ),
+      body: const Center(
+        child:  Padding(
+          padding: EdgeInsets.symmetric(horizontal: 18.0),
+          child: _TaskTextWidget(),
         ),
       ),
       floatingActionButton: model?.isValid == true ? actionButton : null,

@@ -93,9 +93,15 @@ class _TaskListRowWidget extends StatelessWidget {
     final task = model.tasks[indeInList];
 
     final icon = task.isDone ? Icons.done : Icons.portrait;
-    final style = task.isDone ? const TextStyle(
+    final iconColor = task.isDone ? Colors.green : Colors.black;
+    final style = task.isDone
+        ? const TextStyle(
             decoration: TextDecoration.lineThrough,
-          ) : null;
+            fontSize: 20
+          )
+        : const TextStyle(
+            fontSize: 20
+          );
 
     return Slidable(
       key: const ValueKey(0),
@@ -104,7 +110,7 @@ class _TaskListRowWidget extends StatelessWidget {
         children: [
           SlidableAction(
             onPressed: ((context) => model.deleteTask(indeInList)),
-            backgroundColor: Color(0xFFFE4A49),
+            backgroundColor: const Color(0xFFFE4A49),
             foregroundColor: Colors.white,
             icon: Icons.delete,
             label: 'Delete',
@@ -116,7 +122,10 @@ class _TaskListRowWidget extends StatelessWidget {
           task.text,
           style: style,
         ),
-        trailing: Icon(icon),
+        trailing: Icon(
+          icon,
+          color: iconColor,
+        ),
         onTap: () => model.doneToggle(indeInList),
       ),
     );

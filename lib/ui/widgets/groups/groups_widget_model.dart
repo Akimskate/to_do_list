@@ -38,7 +38,6 @@ class GroupsWidgetModel extends ChangeNotifier {
   Future<void> deleteGroup(int groupIndex) async {
     final box = await _box;
     final groupKey = (await _box).keyAt(groupIndex);
-    final taskBoxName = BoxManager.instance.makeTaskBoxName(groupKey);
     await Hive.deleteBoxFromDisk('tasks_box_$groupKey');
     await box.deleteAt(groupIndex);
   }
