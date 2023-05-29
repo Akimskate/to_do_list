@@ -27,12 +27,10 @@ class _GroupFormWidgetBody extends StatelessWidget {
         appBar: AppBar(
           title: const Text('New Group'),
         ),
-        body: Center(
-          child: Container(
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 18.0),
-              child: _GroupNameWidget(),
-            ),
+        body: const Center(
+          child:  Padding(
+            padding: EdgeInsets.symmetric(horizontal: 18.0),
+            child: _GroupNameWidget(),
           ),
         ),
         floatingActionButton: FloatingActionButton(

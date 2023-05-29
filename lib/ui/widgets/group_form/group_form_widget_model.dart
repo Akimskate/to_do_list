@@ -20,7 +20,7 @@ class GroupFormWidgetModel extends ChangeNotifier {
       notifyListeners();
       return;
     }
-    ;
+    
 
     final box = await BoxManager.instance.openGroupBox();
     final group = Group(name: groupName);
